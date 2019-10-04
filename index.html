@@ -3,135 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <title>BS Corretora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <!-- Regiao do cabecalho -->
-<div>
-    <div>
-        <h1>BS Corretora</h1>
-    </div>
-
-    <ul>
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <li>
-            <a href="#">Imóveis</a>
-        </li>
-        <li>
-            <a href="#">Fale Conosco</a>
-        </li>
-    </ul>
-</div>
-
-<!-- Regiao das imagens -->
-<div>
-    <h2>Imóveis de alta .classe, com .estilo</h2>
-</div>
-
-<div>
-    <img src="img/casa1.jpg" alt="Foto da casa 1"> Casa em Pirenópolis, em frente à cachoeira do roncador
-    <img src="img/casa2.jpg" alt="Foto da casa 2"> Casa no alto da serra do teixeira. Ideal para uma família
-    aventureira
-    <img src="img/casa3.jpg" alt="Foto da casa 3"> Casa no condomínio Alphaville, o condomínio que terá o maior
-    criadouro
-    de peixes Beta
-    <img src="img/casa4.jpg" alt="Foto da casa 4"> Casa em Areia, pertinho dos engenhos e da natureza
-    <img src="img/casa5.jpg" alt="Foto da casa 5"> Casa de veraneio em Águas Claras de Lindóia
-    <img src="img/casa6.jpg" alt="Foto da casa 6"> Casa no alto da serra do teixeira. Ideal para uma família
-    aventureira
-</div>
-
-<!-- Regiao da casa em destaque -->
-<div>
-    <h2>Destaque</h2>
-    Casa em Ilha Bela
-
-    <button type="button">Marque uma visita</button>
-    <img src="img/casa-destaque.jpg" alt="Foto da casa em destaque">
-</div>
-
-<!-- Regiao dos depoimentos dos clientes -->
-<div>
-    <h2>Clientes</h2>
-
-    <div>
-        <img src="img/foto-cliente1.jpeg" alt="Foto do cliente 1">
-        <div>
-            <h3>Fulano de tal</h3>
-            <div>
-                Texto aqui falando bem da corretora porque ela é demais.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            </div>
+<header class="bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-light fonte-titulo" href="#">BS Corretora</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Imóveis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#modal-falar" href="#">Fale Conosco</a>
+                </li>
+            </ul>
         </div>
-    </div>
+    </nav>
+</header>
 
-    <div>
-        <img src="img/foto-cliente2.jpeg" alt="Foto do cliente 2">
-        <div>
-            <h3>Fulano de tal</h3>
-            <div>
-                Texto aqui falando bem da corretora porque ela é demais.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+<div id="modal-falar" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Fale conosco</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-    </div>
-
-    <div>
-        <img src="img/foto-cliente3.jpeg" alt="Foto do cliente 3">
-        <div>
-            <h3>Fulano de tal</h3>
-            <div>
-                Texto aqui falando bem da corretora porque ela é demais.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            <div class="modal-body">
+                <form action="">
+                    <textarea placeholder="Digite seu texto" style="width: 100%"></textarea>
+                </form>
             </div>
-        </div>
-    </div>
-
-    <div>
-        <img src="img/foto-cliente4.jpeg" alt="Foto do cliente 4">
-        <div>
-            <h3>Fulano de tal</h3>
-            <div>
-                Texto aqui falando bem da corretora porque ela é demais.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-dark">Enviar</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Região dos planos de aluguéis -->
-<div>
-    <h2>Planos de Aluguéis:</h2>
+<main>
+    <!-- Regiao das imagens -->
+    <section id="casas">
+        <div>
+            <h2 class="fonte-titulo text-center pt-5 mt-3">Imóveis de alta .classe, com .estilo</h2>
+        </div>
+
+        <section class="container">
+            <div class="row justify-content-md-around justify-content-center">
+                <article class="card card-imagem">
+                    <img src="img/casa1.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pirenópolis</h5>
+                        <p class="card-text">Casa em Pirenópolis, em frente à cachoeira do roncador</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+
+                <article class="card card-imagem">
+                    <img src="img/casa2.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Teixeira</h5>
+                        <p class="card-text">Casa no alto da serra do teixeira. Ideal para uma família</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+
+                <article class="card card-imagem">
+                    <img src="img/casa3.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphaville</h5>
+                        <p class="card-text">Casa no condomínio Alphaville, o condomínio que terá o maior
+                            criadouro de peixes Beta</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+
+                <article class="card card-imagem">
+                    <img src="img/casa4.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Areia</h5>
+                        <p class="card-text">Casa em Areia, pertinho dos engenhos e da natureza</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+
+                <article class="card card-imagem">
+                    <img src="img/casa5.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lindóia</h5>
+                        <p class="card-text">Casa de veraneio em Águas Claras de Lindóia</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+
+                <article class="card card-imagem">
+                    <img src="img/casa6.jpg" class="card-imagem-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Teixeira</h5>
+                        <p class="card-text">Casa no alto da serra do teixeira. Ideal para uma família</p>
+                        <a href="#" class="btn btn-dark">Visitar</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </section>
+
+    <!--    <div class="container bg-warning">-->
+    <!--        <div class="row">-->
+    <!--            <h1 class="col-3 col-sm-12 col-md-3">p1</h1>-->
+    <!--            <h1 class="col-3 col-sm-12 col-md-3">p2</h1>-->
+    <!--            <h1 class="col-3 col-sm-12 col-md-3">p3</h1>-->
+    <!--            <h1 class="col-3 col-sm-12 col-md-3">p4</h1>-->
+    <!--            <h1 class="col-6 col-sm-12 col-md-3">p5</h1>-->
+    <!--            <h1 class="col-6 col-sm-12 col-md-3">p6</h1>-->
+    <!--            <h1 class="col-6 col-sm-12 col-md-3">p7</h1>-->
+    <!--            <h1 class="col-6 col-sm-12 col-md-3">p8</h1>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+
+    <!-- Regiao da casa em destaque -->
     <div>
-        <h3>Prata</h3>
-        <ul>
-            <li>1x</li>
-            <li>2x</li>
-            <li>3x</li>
+        <h2>Destaque</h2>
+        Casa em Ilha Bela
+
+        <button type="button">Marque uma visita</button>
+        <img src="img/casa-destaque.jpg" alt="Foto da casa em destaque">
+    </div>
+
+    <!-- Regiao dos depoimentos dos clientes -->
+    <div>
+        <h2 class="fonte-titulo mt-3">Clientes</h2>
+
+        <ul class="list-unstyled">
+            <li class="media">
+                <img src="img/foto-cliente1.jpeg" class="mr-3 rounded" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </li>
+            <li class="media my-4">
+                <img src="img/foto-cliente2.jpeg" class="mr-3 rounded" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </li>
+            <li class="media">
+                <img src="img/foto-cliente3.jpeg" class="mr-3 rounded" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">List-based media object</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </li>
         </ul>
-        <button>Assinar</button>
-    </div>
-    <div>
-        <h3>Ouro</h3>
-        <ul>
-            <li>1x</li>
-            <li>2x</li>
-            <li>3x</li>
-        </ul>
-        <button>Assinar</button>
-    </div>
-    <div>
-        <h3>Diamante</h3>
-        <ul>
-            <li>1x</li>
-            <li>2x</li>
-            <li>3x</li>
-        </ul>
-        <button>Assinar</button>
+
     </div>
 
-</div>
+    <!-- Região dos planos de aluguéis -->
+    <div>
+        <h2>Planos de Aluguéis:</h2>
+        <div>
+            <h3>Prata</h3>
+            <ul>
+                <li>1x</li>
+                <li>2x</li>
+                <li>3x</li>
+            </ul>
+            <button>Assinar</button>
+        </div>
+        <div>
+            <h3>Ouro</h3>
+            <ul>
+                <li>1x</li>
+                <li>2x</li>
+                <li>3x</li>
+            </ul>
+            <button>Assinar</button>
+        </div>
+        <div>
+            <h3>Diamante</h3>
+            <ul>
+                <li>1x</li>
+                <li>2x</li>
+                <li>3x</li>
+            </ul>
+            <button>Assinar</button>
+        </div>
+    </div>
+
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
